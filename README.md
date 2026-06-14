@@ -7,3 +7,16 @@
 - By stratehically placing error.tsx files at different levels in your route folders, you can control exactly how detailed your error handling gets
 
 - Where you put your error.tsx file makes a huge difference - it determines exactly which parts of your UI gets affected when things go wrong.
+
+
+# Handling Errors In Layouts
+
+- An error.tsx file will handle errors for all its nested child segments
+
+- There's an interesting catch with layout.tsx components in the same segment
+
+- The error boundary won't catch errors thrown in layout.tsx within the same segment because of how the component hierarchy works
+
+- The layout actually sits above the error boundary in the component tree
+
+![alt text](errors.png)
