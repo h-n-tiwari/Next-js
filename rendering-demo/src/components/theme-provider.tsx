@@ -20,6 +20,7 @@ const ThemeContext = createContext<Theme>(defaultTheme);
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     return (
+        // If you're using React -v 19 you can render just context as a provider instead of context.provider.
         <ThemeContext.Provider value={defaultTheme}>
             {children}
         </ThemeContext.Provider>
