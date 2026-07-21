@@ -43,16 +43,19 @@
 // }
 
 
-// CONTEXT PROVIDERS
+// // CONTEXT PROVIDERS
 
-"use client";
+// "use client";
 
-import { useTheme } from "@/components/theme-provider";
+// import { useTheme } from "@/components/theme-provider";
 
-import React from "react";
+// import React from "react";
 
-export default function ClientRoutePage() {
-	const theme = useTheme();
+// export default function ClientRoutePage() {
+// 	const theme = useTheme();
 
-	return <h1 style={{ color: theme.colors.primary }}>Client router page</h1>
-}
+// 	return <h1 style={{ color: theme.colors.primary }}>Client router page</h1>
+// }
+
+
+
