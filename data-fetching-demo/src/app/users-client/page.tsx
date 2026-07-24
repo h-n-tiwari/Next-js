@@ -6,12 +6,11 @@ type User = {
     username: string;
     email: string;
     phone: string;
-}
+};
 
 export default function UserClient() {
-    const [users, setUsers] = userState<User[]>([]);
+    const [users, setUsers] = useState<User[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
-
 
 }
