@@ -1,14 +1,17 @@
 "use client";
 
-import { useState } from "react";
-import { ServerComponentOne } from "./server-component-one";
+import { Children, useState } from "react";
 
-export const ClientComponentOne = () => {
+export const ClientComponentOne = ({
+    children,
+}: {
+    children: React.ReactNode;
+}) => {
     const [name, setName] = useState("BatMan");
     return (
         <>
             <h1>Client Component One</h1>
-            <ServerComponentOne />
+            {Children}
         </>
     );
 }
