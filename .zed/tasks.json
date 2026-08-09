@@ -1,0 +1,27 @@
+[
+  {
+    "label": "Dev - data-fetching-demo",
+    "command": "npm run dev",
+    "cwd": "$ZED_WORKTREE_ROOT/data-fetching-demo"
+  },
+  {
+    "label": "Dev - rendering-demo",
+    "command": "npm run dev",
+    "cwd": "$ZED_WORKTREE_ROOT/rendering-demo"
+  },
+  {
+    "label": "Dev - route-handlers-demo",
+    "command": "npm run dev",
+    "cwd": "$ZED_WORKTREE_ROOT/route-handlers-demo"
+  },
+  {
+    "label": "Dev - Project",
+    "command": "npm run dev",
+    "cwd": "$ZED_WORKTREE_ROOT/Project"
+  },
+  {
+    "label": "Dev - MultipleRootLayoutsNextJs",
+    "command": "npm run dev",
+    "cwd": "$ZED_WORKTREE_ROOT/MultipleRootLayoutsNextJs"
+  }
+]

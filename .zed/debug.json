@@ -1,0 +1,56 @@
+// Project-local debug tasks
+//
+// For more documentation on how to configure debug tasks,
+// see: https://zed.dev/docs/debugger
+[
+  {
+    "adapter": "JavaScript",
+    "label": "Debug data-fetching-demo",
+    "type": "chrome",
+    "request": "launch",
+    "url": "http://localhost:3000",
+    "webRoot": "$ZED_WORKTREE_ROOT/data-fetching-demo",
+    "console": "integratedTerminal",
+    "skipFiles": ["<node_internals>/**"]
+  },
+  {
+    "adapter": "JavaScript",
+    "label": "Debug rendering-demo",
+    "type": "chrome",
+    "request": "launch",
+    "url": "http://localhost:3000",
+    "webRoot": "$ZED_WORKTREE_ROOT/rendering-demo",
+    "console": "integratedTerminal",
+    "skipFiles": ["<node_internals>/**"]
+  },
+  {
+    "adapter": "JavaScript",
+    "label": "Debug route-handlers-demo",
+    "type": "chrome",
+    "request": "launch",
+    "url": "http://localhost:3000",
+    "webRoot": "$ZED_WORKTREE_ROOT/route-handlers-demo",
+    "console": "integratedTerminal",
+    "skipFiles": ["<node_internals>/**"]
+  },
+  {
+    "adapter": "JavaScript",
+    "label": "Debug Project",
+    "type": "chrome",
+    "request": "launch",
+    "url": "http://localhost:3000",
+    "webRoot": "$ZED_WORKTREE_ROOT/Project",
+    "console": "integratedTerminal",
+    "skipFiles": ["<node_internals>/**"]
+  },
+  {
+    "adapter": "JavaScript",
+    "label": "Debug MultipleRootLayoutsNextJs",
+    "type": "chrome",
+    "request": "launch",
+    "url": "http://localhost:3000",
+    "webRoot": "$ZED_WORKTREE_ROOT/MultipleRootLayoutsNextJs",
+    "console": "integratedTerminal",
+    "skipFiles": ["<node_internals>/**"]
+  }
+]
