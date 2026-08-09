@@ -1,5 +1,11 @@
-import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
+import { PrismaClient } from "./generated/prisma/client";
+import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
+
+const adapter = new PrismaBetterSqlite3({
+  url: "file:./dev.db",
+});
+
+const prisma = new PrismaClient({ adapter });
 
 const seedProducts = async () => {
   const count = await prisma.product.count();
