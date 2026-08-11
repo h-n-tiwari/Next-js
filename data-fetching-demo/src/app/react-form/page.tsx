@@ -38,7 +38,7 @@ export default function CreateProduct() {
         Title
         <input
           type="text"
-          className="block w-full p-2 text-black border rounded"
+          className="block w-full p-2 text-black border rounded bg-white"
           name="title"
           onChange={(e) => setTitle(e.target.value)}
         />
@@ -47,7 +47,7 @@ export default function CreateProduct() {
         Price
         <input
           type="number"
-          className="block w-full p-2 text-black border rounded"
+          className="block w-full p-2 text-black border rounded bg-white"
           name="price"
           onChange={(e) => setPrice(Number(e.target.value))}
         />
@@ -55,14 +55,14 @@ export default function CreateProduct() {
       <label className="text-white">
         Description
         <textarea
-          className="block w-full p-2 text-black border rounded"
+          className="block w-full p-2 text-black border rounded bg-white"
           name="description"
           onChange={(e) => setDescription(e.target.value)}
         />
       </label>
       <button
         type="submit"
-        className="block w-full p-2 text-white bg-blue-500 rounded disabled:bg-gray-500"
+        className="block w-full p-2 mt-4  text-white  bg-blue-500 rounded disabled:bg-gray-500"
         disabled={loading}
       >
         {loading ? "Submitting..." : "Submit"}
