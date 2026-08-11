@@ -3,7 +3,7 @@ export default function AddProductPage() {
     "use server";
   }
   return (
-    <form className="p-4 space-y-4 max-w-96">
+    <form action = { createProduct }  className="p-4 space-y-4 max-w-96">
       <label className="text-white">
         Title
         <input
