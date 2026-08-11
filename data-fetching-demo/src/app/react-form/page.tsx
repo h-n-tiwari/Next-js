@@ -21,8 +21,7 @@ export default function CreateProduct() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ title, price, description }),
-      });
-      if (response.ok) {
+      });      if (response.ok) {
         router.push("/products-db");
       }
     } catch (error) {
