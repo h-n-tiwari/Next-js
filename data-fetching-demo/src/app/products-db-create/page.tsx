@@ -1,6 +1,8 @@
+"use client";    // Before using directive getting error and after using directive again hitting error.
+
 import { addProduct } from "@/prisma-db";
 import { redirect } from "next/navigation";
-import { Submit } from "@/components/submit";
+// import { Submit } from "@/components/submit";
 import { useActionState } from "react";
 
 type Errors = {
