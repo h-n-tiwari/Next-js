@@ -16,7 +16,7 @@ type FormState = {
 export default function AddProductPage() {
   const initialState: FormState = { errors: {} };
 
-  const [state, formAction, ispending] = useActionState(
+  const [state, formAction, isPending] = useActionState(
     createProduct,
     initialState,
   );
@@ -49,7 +49,7 @@ export default function AddProductPage() {
   }
 
   return (
-    <form action={createProduct} className="p-4 space-y-4 max-w-96">
+    <form action={formAction} className="p-4 space-y-4 max-w-96">
       <div>
         <label className="text-white">
           Title
@@ -94,7 +94,15 @@ export default function AddProductPage() {
         )}
       </div>
 
-      <Submit />
+      <button
+        type="submit"
+        className="block w-full p-2 mt-4  text-white  bg-blue-500 rounded disabled:bg-gray-500"
+        disabled={isPending}
+      >
+        Submit
+      </button>
+
+      {/*<Submit />*/}
     </form>
   );
 }
