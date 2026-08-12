@@ -2,18 +2,27 @@ import { addProduct } from "@/prisma-db";
 import { redirect } from "next/navigation";
 import { Submit } from "@/components/submit";
 
+type Errors = {
+  title?: string;
+  price?: string;
+  description?: string;
+};
+
+type FormState = {
+  errors: Errors;
+};
+
 
 export default function AddProductPage() {
+  const initialState: FormState = { errors: {} };
   async function createProduct(formData: FormData) {
     "use server";
 
     const title = formData.get("title") as string;
     const price = formData.get("price") as string;
     const description = formData.get("description") as string;
-
     await addProduct(title, parseInt(price), description);
     redirect("/products-db");
-
   }
 
   return (
