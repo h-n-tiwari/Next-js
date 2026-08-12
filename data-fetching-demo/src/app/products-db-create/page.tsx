@@ -1,6 +1,7 @@
 import { addProduct } from "@/prisma-db";
 import { redirect } from "next/navigation";
 import { Submit } from "@/components/submit";
+import { useActionState } from "react";
 
 type Errors = {
   title?: string;
@@ -12,9 +13,11 @@ type FormState = {
   errors: Errors;
 };
 
-
 export default function AddProductPage() {
   const initialState: FormState = { errors: {} };
+
+  useActionState(createProduct, initialState);
+
   async function createProduct(formData: FormData) {
     "use server";
 
