@@ -18,7 +18,7 @@ export default function AddProductPage() {
 
   const [state, formAction, ispending] = useActionState(
     createProduct,
-    initialState
+    initialState,
   );
 
   async function createProduct(formData: FormData) {
@@ -49,30 +49,51 @@ export default function AddProductPage() {
   }
 
   return (
-    <form action = { createProduct } className="p-4 space-y-4 max-w-96">
-      <label className="text-white">
-        Title
-        <input
-          type="text"
-          className="block w-full p-2 text-black border rounded bg-white"
-          name="title"
-        />
-      </label>
-      <label className="text-white">
-        Price
-        <input
-          type="number"
-          className="block w-full p-2 text-black border rounded bg-white"
-          name="price"
-        />
-      </label>
-      <label className="text-white">
-        Description
-        <textarea
-          className="block w-full p-2 text-black border rounded bg-white"
-          name="description"
-        />
-      </label>
+    <form action={createProduct} className="p-4 space-y-4 max-w-96">
+      <div>
+        <label className="text-white">
+          Title
+          <input
+            type="text"
+            className="block w-full p-2 text-black border rounded bg-white"
+            name="title"
+          />
+        </label>
+
+        {state.errors.title && (
+          <p className="text-red-500">{state.errors.title}</p>
+        )}
+      </div>
+
+      <div>
+        <label className="text-white">
+          Price
+          <input
+            type="number"
+            className="block w-full p-2 text-black border rounded bg-white"
+            name="price"
+          />
+        </label>
+
+        {state.errors.price && (
+          <p className="text-red-500">{state.errors.price}</p>
+        )}
+      </div>
+
+      <div>
+        <label className="text-white">
+          Description
+          <textarea
+            className="block w-full p-2 text-black border rounded bg-white"
+            name="description"
+          />
+        </label>
+
+        {state.errors.description && (
+          <p className="text-red-500">{state.errors.description}</p>
+        )}
+      </div>
+
       <Submit />
     </form>
   );
