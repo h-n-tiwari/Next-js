@@ -1,9 +1,8 @@
 "use client";    // Before using directive getting error and after using directive again hitting error.
 
 // import { Submit } from "@/components/submit";
-import { addProduct } from "@/prisma-db";
-import { redirect } from "next/navigation";
 import { useActionState } from "react";
+import { FormState, createProduct } from "@/actions/products";
 
 export default function AddProductPage() {
   const initialState: FormState = { errors: {} };
