@@ -1,15 +1,14 @@
 // import { Submit } from "@/components/submit";
-import { useActionState } from "react";
+import { getProduct } from "@/prisma-db";
 import EditProductForm from "./product-edit-form";
 
-export default function EditProductPage({
+export default async function EditProductPage({
   params,
 }: {
-    params: Promise<{ id: string }>;
-  }) {
-
+  params: Promise<{ id: string }>;
+}) {
   const { id } = await params;
   const product = await getProduct(parseInt(id));
 
-  return <EditProductForm />
+  return <EditProductForm product={product} />;
 }

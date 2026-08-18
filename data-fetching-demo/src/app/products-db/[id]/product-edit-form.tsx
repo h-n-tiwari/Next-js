@@ -3,8 +3,9 @@
 // import { Submit } from "@/components/submit";
 import { useActionState } from "react";
 import { FormState, createProduct } from "@/actions/products";
+import type { Product } from "@/app/products-db/page";
 
-export default function EditProductForm() {
+export default function EditProductForm({ product }: { product: Product }) {
 
   const initialState: FormState = { errors: {} };
 
@@ -22,6 +23,7 @@ export default function EditProductForm() {
             type="text"
             className="block w-full p-2 text-black border rounded bg-white"
             name="title"
+            defaultValue={product.title}
           />
         </label>
 
@@ -37,6 +39,8 @@ export default function EditProductForm() {
             type="number"
             className="block w-full p-2 text-black border rounded bg-white"
             name="price"
+            defaultValue={product.price}
+
           />
         </label>
 
@@ -51,6 +55,7 @@ export default function EditProductForm() {
           <textarea
             className="block w-full p-2 text-black border rounded bg-white"
             name="description"
+            defaultValue={product.description ?? ""}
           />
         </label>
 
