@@ -1,6 +1,6 @@
 "use server";
 
-import { addProduct } from "@/prisma-db";
+import { addProduct, updateProduct } from "@/prisma-db";
 import { redirect } from "next/navigation";
 
 export type Errors = {
@@ -13,7 +13,7 @@ export type FormState = {
   errors: Errors;
 };
 
-export async function createProduct(prevState: FormState, formData: FormData) {
+export async function editProduct(prevState: FormState, formData: FormData) {
 
   const title = formData.get("title") as string;
   const price = formData.get("price") as string;
@@ -35,6 +35,6 @@ export async function createProduct(prevState: FormState, formData: FormData) {
     return { errors };
   }
 
-  await addProduct(title, parseInt(price), description);
+  await updateProduct(title, parseInt(price), description);
   redirect("/products-db");
 }

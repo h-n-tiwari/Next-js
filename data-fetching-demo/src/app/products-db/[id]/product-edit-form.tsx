@@ -2,7 +2,7 @@
 
 // import { Submit } from "@/components/submit";
 import { useActionState } from "react";
-import { FormState, createProduct } from "@/actions/products";
+import { FormState, editProduct } from "@/actions/products";
 import type { Product } from "@/app/products-db/page";
 
 export default function EditProductForm({ product }: { product: Product }) {
@@ -10,7 +10,7 @@ export default function EditProductForm({ product }: { product: Product }) {
   const initialState: FormState = { errors: {} };
 
   const [state, formAction, isPending] = useActionState(
-    createProduct,
+    editProduct,
     initialState,
   );
 
