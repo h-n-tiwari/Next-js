@@ -9,8 +9,10 @@ export default function EditProductForm({ product }: { product: Product }) {
 
   const initialState: FormState = { errors: {} };
 
+  const editProductWithId = editProduct.bind(null, product.id);
+
   const [state, formAction, isPending] = useActionState(
-    editProduct,
+    editProductWithId,
     initialState,
   );
 
