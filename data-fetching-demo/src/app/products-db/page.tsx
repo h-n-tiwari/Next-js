@@ -6,22 +6,30 @@ export type Product = {
   title: string;
   price: number;
   description: string | null;
-}
-
+};
 
 export default async function ProductPage() {
   const products: Product[] = await getProducts();
   return (
     <ul className="space-y-4 p-4">
-      {products.map((product => (
+      {products.map((product) => (
         <li
-          key={product.id} className="p-4 bg-white shadow-md rounded-lg text-gray-700"
+          key={product.id}
+          className="p-4 bg-white shadow-md rounded-lg text-gray-700"
         >
-          <h2 className="text-xl font-semibold"><Link href={`/products-db/${product.id}`}>{product.title}</Link></h2>
+          <h2 className="text-xl font-semibold">
+            <Link href={`/products-db/${product.id}`}>{product.title}</Link>
+          </h2>
           <p>{product.description}</p>
           <p className="text-lg font-medium">${product.price}</p>
+          <button
+            type="submit"
+            className="px-4 py-2 mt-4 text-whitebg-red-500 roundedrounded-md bg-red-700"
+          >
+            Delete
+          </button>
         </li>
-      )))}
+      ))}
     </ul>
   );
 }
